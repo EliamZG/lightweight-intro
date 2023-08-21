@@ -1,0 +1,165 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconButton from "../components/IconButton.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<Layout title="Portfolio">
+  <section class="flex items-center box-border w-screen h-screen flex-col">
+    <header
+      class="fixed md:relative top-0 w-screen h-16 bg-slate-200 dark:bg-primary md:bg-none md:dark:bg-none font-bold border border-l-0 border-r-0 border-t-0 border-slate-300 dark:border-secondary"
+    >
+      <h1 class="text-3xl uppercase p-3 text-slate-600 dark:text-white">
+        <span lang="es">Acerca</span>
+        <span lang="en" hidden>About me</span>
+      </h1>
+    </header>
+    <article class="relative top-20 flex flex-col w-full items-center">
+      <img
+        src="http://via.placeholder.com/300x300.jpg"
+        class="flex sm:flex rounded-full w-64 h-64 mb-6"
+        alt="my picture"
+      />
+      <div class="flex flex-row w-full sm:max-w-lg justify-center mb-4">
+        <ul class="grow">
+          <li class="pb-2">
+            <span lang="es" class="text-slate-700 dark:text-slate-300"
+              >Nombre:</span
+            >
+            <span lang="en" class="text-slate-700 dark:text-slate-300" hidden
+              >Name:</span
+            >
+            <p>Eliam.</p>
+          </li>
+          <li class="pb-2">
+            <span lang="es" class="text-slate-700 dark:text-slate-300"
+              >Apellido:</span
+            >
+            <span lang="en" class="text-slate-700 dark:text-slate-300" hidden
+              >Last Name:</span
+            >
+            <p>Zamora.</p>
+          </li>
+          <li class="pb-2">
+            <span lang="es" class="text-slate-700 dark:text-slate-300"
+              >Nacionalidad:</span
+            >
+            <span lang="en" class="text-slate-700 dark:text-slate-300" hidden
+              >Nationality:</span
+            >
+            <p lang="es">Costarricense.</p>
+            <p lang="en" hidden>Costa Rican.</p>
+          </li>
+          <li class="pb-2">
+            <span lang="es" class="text-slate-700 dark:text-slate-300"
+              >Ubicación:</span
+            >
+            <span lang="en" class="text-slate-700 dark:text-slate-300" hidden
+              >Location:</span
+            >
+            <p>Grecia, Alajuela.</p>
+          </li>
+          <li class="pb-2">
+            <span class="text-slate-700 dark:text-slate-300">Freelance:</span>
+            <p lang="es">Disponible.</p>
+            <p lang="en" hidden>Available.</p>
+          </li>
+        </ul>
+        <ul class="grow">
+          <li class="pb-2 flex flex-row">
+            <a
+              href="https://www.linkedin.com/in/eliam-zamora/"
+              class="flex flex-row w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <figure class="w-8">
+                <Icon icon={"icon-08"} />
+              </figure>
+              <div class="grow">
+                <span class="text-slate-700 dark:text-slate-300">LinkedIn:</span
+                >
+                <p>eliamzg</p>
+              </div>
+            </a>
+          </li>
+          <li class="pb-2 flex flex-row">
+            <a
+              href="https://github.com/EliamZG"
+              class="flex flex-row w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <figure class="w-8">
+                <Icon icon={"icon-09"} />
+              </figure>
+              <div class="grow">
+                <span class="text-slate-700 dark:text-slate-300">Github:</span>
+                <p>EliamZG</p>
+              </div>
+            </a>
+          </li>
+          <li class="pb-2 flex flex-row">
+            <a
+              href="https://wa.me/50687316650"
+              class="flex flex-row w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <figure class="w-8">
+                <Icon icon={"icon-19"} />
+              </figure>
+              <div class="grow">
+                <span class="text-slate-700 dark:text-slate-300">Whatsapp:</span
+                >
+                <p>+87316650</p>
+              </div>
+            </a>
+          </li>
+          <li class="pb-2 flex flex-row">
+            <a href="/contact" class="flex flex-row w-full">
+              <div class="grow">
+                <span lang="es" class="text-slate-700 dark:text-slate-300"
+                  >Correo:</span
+                >
+                <span
+                  lang="en"
+                  class="text-slate-700 dark:text-slate-300"
+                  hidden>Email:</span
+                >
+                <p>eliam.zamora@gmail.com</p>
+              </div>
+            </a>
+          </li>
+          <li class="pb-2 flex flex-row">
+            <div>
+              <span lang="es" class="text-slate-700 dark:text-slate-300"
+                >Idiomas:</span
+              >
+              <span lang="en" class="text-slate-700 dark:text-slate-300" hidden
+                >Languages:</span
+              >
+              <p lang="es">Español - Inglés</p>
+              <p lang="en" hidden>Spanish - English</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <IconButton
+        lang="en"
+        icon="icon-21"
+        text="download cv"
+        href="documents/CV_EN.pdf"
+        download="EliamZG_CV_EN"
+        hidden
+      />
+      <IconButton
+        lang="es"
+        icon="icon-21"
+        text="descargar cv"
+        href="documents/CV_ES.pdf"
+        download="EliamZG_CV_ES"
+      />
+    </article>
+  </section>
+</Layout>

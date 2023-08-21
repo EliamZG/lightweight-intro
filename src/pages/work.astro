@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconButton from "../components/IconButton.astro";
+import Icon from "../components/Icon.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout title="Portfolio">
+  <section class="flex items-center box-border w-screen h-screen flex-col">
+    <header
+      class="fixed md:relative top-0 w-screen h-16 bg-slate-200 dark:bg-primary md:bg-none md:dark:bg-none font-bold border border-l-0 border-r-0 border-t-0 border-slate-300 dark:border-secondary"
+    >
+      <h1 class="text-3xl uppercase p-3 text-slate-600 dark:text-white">
+        <span lang="es">Portafolio</span>
+        <span lang="en" hidden>Portfolio</span>
+      </h1>
+    </header>
+    <article class="relative top-20 flex flex-row gap-4 w-full md:max-w-5xl items-center flex-wrap">
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+      <ProjectCard title="Nombre del proyecto" href="work/test1"/>
+    </article>
+  </section>
+</Layout>

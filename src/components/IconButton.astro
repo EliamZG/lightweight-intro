@@ -1,0 +1,17 @@
+---
+const { icon, text, ...attributes } = Astro.props;
+import Icon from "./Icon.astro";
+---
+
+<a
+  {...attributes}
+  class="w-60 border border-accent rounded-full uppercase text-slate-700 dark:text-white font-bold group group-hover:cursor-pointer overflow-hidden"
+>
+  <div class="flex flex-row items-center pl-8 justify-between">
+    <p class="z-10 text-slate-700 dark:text-white group-hover:text-white">{text}</p>
+    <figure class="w-16 bg-accent rounded-full p-2 grayscale group-hover:grayscale-0 
+    before:absolute before:left-10 before:top-0 before:bg-accent before:h-16 before:w-60 before:-z-10 group-hover:before:-translate-x-60 before:transition-all before:duration-500">
+    <Icon icon={icon} />
+    </figure>
+  </div>
+</a>

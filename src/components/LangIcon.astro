@@ -1,0 +1,33 @@
+<li class="fixed top-0 right-16 flex items-center justify-center h-16 w-16 mx-auto group grayscale hover:grayscale-0 transition-all duration-600">
+  <button id="langToggle" class="flex flex-col items-center rounded-3xl bg-accent" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20" class="justify-center" >
+      <path d="m9.53,4.59h7.15c.93,0,1.68.75,1.68,1.68v6.73c0,.93-.75,1.68-1.68,1.68h-7.15V4.59Z" class="fill-primary transition-all duration-200"></path>
+      <polygon points="5.25 10.12 6.25 10.12 5.75 8.99 5.25 10.12" class="fill-secondary"/>
+      <path d="m3.31,4.59c-.93,0-1.68.75-1.68,1.68v6.73c0,.93.75,1.68,1.68,1.68h6.31V4.59H3.31Zm4.33,7.38c-.27.12-.58,0-.69-.27l-.23-.53h-1.94l-.23.53c-.12.27-.43.39-.69.27-.27-.12-.39-.43-.27-.69l1.68-3.79c.08-.19.27-.31.48-.31s.4.12.48.31l1.68,3.79c.12.27,0,.58-.27.69Z" class="fill-secondary transition-all duration-200"/>
+      <path d="m15.62,7.77h-1.58v-.11c0-.29-.24-.53-.53-.53h0c-.29,0-.53.23-.53.52v.11h-1.37c-.29,0-.53.24-.53.53s.24.53.53.53h2.82c-.19.44-.46.84-.78,1.18h-.01s-.38-.4-.38-.4c-.21-.21-.54-.21-.74,0s-.21.54,0,.74l.32.32c-.16.1-.32.18-.49.26l-.09.04c-.27.12-.39.43-.27.69.12.27.43.39.69.27l.09-.04c.32-.14.62-.31.89-.51.11.08.23.15.34.22l.5.3c.25.15.57.07.72-.18.15-.25.07-.57-.18-.72l-.5-.3s-.05-.03-.07-.04c.45-.49.81-1.08,1.04-1.72l.04-.12h.05c.29,0,.53-.24.53-.53s-.24-.53-.53-.53Z" class="fill-accent"/>
+    </svg>
+  </button>
+  <span class="absolute w-auto p-2 m-2 min-w-max top-0 rounded-md shadow-md text-white bg-gray-500 text-xs font-bold scale-0 transition-all duration-900 origin-left group-hover:scale-100 group-hover:top-14" >
+    LANG
+  </span>
+</li>
+
+<script is:inline>
+  const lang = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("lang")) {
+      return localStorage.getItem("lang");
+    }
+    return "es";
+  })();
+
+  window.localStorage.setItem("lang", lang);
+
+  document.getElementById("langToggle")
+    .addEventListener("click", () => {
+    const isES = localStorage.getItem("lang").match("es")
+    const element = document.documentElement
+    if (isES) element.setAttribute("lang", "en");
+    else element.setAttribute("lang", "es")
+    localStorage.setItem("lang", isES ? "en" : "es");
+  });
+</script>

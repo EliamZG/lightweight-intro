@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconButton from "../components/IconButton.astro";
+import Icon from "../components/Icon.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout title="Portfolio">
+  <section class="flex items-center box-border w-screen h-screen flex-col">
+    <header
+      class="fixed md:relative top-0 w-screen h-16 bg-slate-200 dark:bg-primary md:bg-none md:dark:bg-none font-bold border border-l-0 border-r-0 border-t-0 border-slate-300 dark:border-secondary"
+    >
+      <h1 class="text-3xl uppercase p-3 text-slate-600 dark:text-white">
+        <span lang="es">Contacto</span>
+        <span lang="en" hidden>Contact</span>
+      </h1>
+    </header>
+    <article
+      class="relative top-20 flex flex-col gap-4 w-full md:max-w-5xl items-center"
+    >
+      <div class="w-full backdrop:md:w-4/12 p-4">
+        <h2 class="font-bold uppercase mb-2 text-lg" lang="es">
+          Logremos metas juntos
+        </h2>
+        <p lang="es">
+          Siempre estoy dispuesto a trabajar y buscar la manera de ayudar.
+          Hablemos y dígame cómo puedo hacerlo.
+        </p>
+        <ul>
+          <li class="pb-2 flex flex-row">
+            <a
+              href="https://wa.me/50687316650"
+              class="flex flex-row w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <figure class="w-8">
+                <Icon icon={"icon-19"} />
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <form
+        class="w-8/12 flex flex-col gap-2"
+        method="post"
+        action="php/process-form.php"
+      >
+        <input class="h-12 rounded-lg p-4 px-8" type="text" name="name" placeholder="YOUR NAME" />
+        <input class="h-12 rounded-lg p-4 px-8" type="email" name="email" placeholder="YOUR EMAIL" />
+        <input class="h-12 rounded-lg p-4 px-8" type="text" name="subject" placeholder="YOUR SUBJECT" />        
+        <textarea class="h-48 rounded-lg p-4 px-8" name="message" placeholder="YOUR MESSAGE"></textarea>
+        <button type="submit" class="h-12 rounded-lg p-4 px-8">
+          <span class="button-text">Send Message</span>
+          <span class="button-icon fa fa-send"></span>
+        </button>
+      </form>
+    </article>
+  </section>
+</Layout>

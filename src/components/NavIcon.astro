@@ -1,0 +1,14 @@
+---
+const { destination, path1, path2, label } = Astro.props;
+---
+<li class="relative flex items-center justify-center h-16 w-16 mx-auto group grayscale hover:grayscale-0 transition-all duration-600">
+  <a href={destination} class="flex flex-col items-center rounded-3xl bg-accent">
+    <svg xmlns="http://www.w3.org/2000/svg" style="" width="40" height="40" viewBox="0 0 20 20" class="justify-center">
+      <path d={path1} class="fill-secondary transition-all duration-200"></path>
+      <path d={path2} class="fill-primary transition-all duration-200"></path>
+    </svg>
+  </a>
+  <span class="absolute w-auto p-2 m-2 min-w-max right-0 rounded-md shadow-md text-white bg-gray-500 text-xs font-bold transition-all duration-900 scale-0 origin-left group-hover:scale-100 group-hover:right-14">
+    {label}
+  </span>
+</li>

@@ -1,22 +1,18 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
-
+import Icon from "./Icon.astro";
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="link-card w-60">
 	<a href={href}>
-		<h2>
+		<header>
 			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+		</header>
+		<img src="895x552.jpg" alt="placeholder">
+		<footer class="flex flex-row h-10">
+			<Icon icon="icon-16"/>
+			<Icon icon="icon-17"/>
+		</footer>
 	</a>
 </li>
 <style>

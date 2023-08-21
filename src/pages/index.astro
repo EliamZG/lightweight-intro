@@ -1,83 +1,38 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import NavBar from '../components/NavBar';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-	<aside>
-		<NavBar/>
-	</aside>
+<Layout title="Portfolio">
+  <section class="flex items-center box-border w-screen h-screen justify-center flex-row bg-cover">
+		<figure class="hidden md:flex w-4/12 h-5/6 bg-slate-100 ml-10 rounded-lg shadow-lg"></figure>
+		<article class="flex flex-col box-border p-7 items-center max-w-lg md:max-w-none md:mr-32 md:w-8/12 md:ml-8 lg:px-14">
+			<img src="http://via.placeholder.com/300x300.jpg" class="hidden sm:flex md:hidden rounded-full w-64 h-64 mb-6" alt="my picture">
+			<div class="flex flex-col lg:flex-row gap-4">
+				<div class="hidden lg:flex w-12 h-1 bg-accent top-4 rounded-full mt-10"></div>
+				<h1 class="flex flex-col uppercase text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-3 w-full" lang="es">
+					<span class="name">Eliam Zamora.</span>
+					<span lang="es" class="md:text-3xl lg:text-6xl">Ingeniero fullstack</span>
+					<span lang="en"  hidden class="md:text-3xl lg:text-6xl">Fullstack Engineer</span>
+				</h1>
+			</div>
+			<p class="mt-2 sm:text-center md:text-justify lg:max-w-2xl" lang="es">Tengo experiencia en bases de datos relacionales, Java y frameworks JS. Disfruto los desafíos, experimentar con cosas nuevas y encontrar solución a problemas por medio del análisis y el entendimiento del negocio.</p>
+			<p class="mt-2 sm:text-center md:text-justify lg:max-w-2xl" lang="en" hidden>I'm experienced in relational databases, Java and JS frameworks. I enjoy challenges, to try new things and to find solutions to problems through analysis and understanding of the business' needs.</p>
+		</article>
+  </section>
 </Layout>
 
 <style>
-	main {
-		@apply flex flex-col
+	h1 > span.name::before {
+		content: '';
+    position: relative;
+    left: -10px;
+    top: 29px;
+    height: 4px;
+    width: 40px;
+    border-radius: 10px;
 	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+
+	span.name {
+		color: #e8aa38;
 	}
 </style>
